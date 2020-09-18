@@ -1,0 +1,65 @@
+/* 文字溢出处理 */
+@mixin line {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+@for $i from 1 through 5 {
+  .line-#{$i} {
+    @include line;
+    -webkit-line-clamp: $i;
+  }
+}
+
+/* 字体对其 */
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+/* 边距 5 - 50 步伐为5 */
+@for $i from 1 through 10 {
+  $val: $i * 5;
+  .mt-#{$val} {
+    margin-top: #{$val}px;
+  }
+  .ml-#{$val} {
+    margin-left: #{$val}px;
+  }
+  .mr-#{$val} {
+    margin-right: #{$val}px;
+  }
+  .mb-#{$val} {
+    margin-bottom: #{$val}px;
+  }
+  .pt-#{$val} {
+    padding-top: #{$val}px;
+  }
+  .pl-#{$val} {
+    padding-left: #{$val}px;
+  }
+  .pr-#{$val} {
+    padding-right: #{$val}px;
+  }
+  .pb-#{$val} {
+    padding-bottom: #{$val}px;
+  }
+}
+.mt-auto {
+  margin-top: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}

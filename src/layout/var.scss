@@ -1,0 +1,12 @@
+$asideWidth: 180; // 展开的侧边栏宽度
+$asideWidthMin: 66; // 缩起的侧边栏宽度
+$asideBackground: #2d2c32; // 侧边栏颜色
+$headerHeight: 60; // 页头导航高度
+$footerHeight: 60; // 页尾高度
+
+:export {
+  asideWidth: $asideWidth;
+  asideWidthMin: $asideWidthMin;
+  headerHeight: $headerHeight;
+  footerHeight: $footerHeight;
+}

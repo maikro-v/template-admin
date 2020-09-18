@@ -1,0 +1,38 @@
+/**
+ * 响应式
+ */
+
+$xs: '480px';
+$sm: '576px';
+$md: '768px';
+$lg: '992px';
+$xl: '1200px';
+$xxl: '1600px';
+
+@mixin media($device) {
+  @if $device == 'xs' {
+    @media screen and (max-width: $xs) {
+      @content;
+    }
+  } @else if $device == 'sm' {
+    @media screen and (max-width: $sm) {
+      @content;
+    }
+  } @else if $device == 'md' {
+    @media screen and (max-width: $md) {
+      @content;
+    }
+  } @else if $device == 'lg' {
+    @media screen and (max-width: $lg) {
+      @content;
+    }
+  } @else if $device == 'xl' {
+    @media screen and (max-width: $xl) {
+      @content;
+    }
+  } @else if $device == 'xxl' {
+    @media screen and (max-width: $xxl) {
+      @content;
+    }
+  }
+}

@@ -14,6 +14,11 @@ class CosImage {
     this.url += `/thumbnail/!${num}p`
     return this
   }
+
+  // 调用结束，返回链接
+  end() {
+    return this.url
+  }
 }
 
 export default function cosImage(url) {

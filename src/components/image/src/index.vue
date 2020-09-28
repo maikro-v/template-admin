@@ -1,11 +1,12 @@
 <template>
   <div class="image">
-    <img v-if="lazy" v-lazy="`${src}${imageMogr2}`" :alt="alt" :style="_style">
-    <img v-else :src="`${src}${imageMogr2}`" :alt="alt" :style="_style">
+    <img v-if="lazy" v-lazy="_src" :alt="alt" :style="_style">
+    <img v-else :src="_src" :alt="alt" :style="_style">
   </div>
 </template>
 
 <script>
+import CosImage from '@/utils/CosImage'
 export default {
   name: 'v-image',
   props: {
@@ -31,12 +32,8 @@ export default {
     }
   },
   computed: {
-    imageMogr2() {
-      let str = '?imageMogr2'
-      if (this.scale) {
-        str += `/thumbnail/!${this.scale}p`
-      }
-      return str
+    _src() {
+      return new CosImage(this.src).scale(this.scale).end()
     },
     _style() {
       return {

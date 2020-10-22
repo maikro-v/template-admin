@@ -17,10 +17,6 @@ export default {
     img: {
       type: String,
       default: ''
-    },
-    body: {
-      type: String,
-      default: null
     }
   }
 }

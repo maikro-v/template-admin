@@ -21,7 +21,14 @@ export default {
       }
     },
     children() {
-      return this.item.children || []
+      const newChildren = []
+      const children = this.item.children || []
+      children.forEach(el => {
+        if (this.showMenu(el.meta)) {
+          newChildren.push(el)
+        }
+      })
+      return newChildren
     }
   },
   methods: {

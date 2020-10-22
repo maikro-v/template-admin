@@ -1,7 +1,7 @@
 <template>
-  <h1 class="logo row align-center justify-center">
-    <Avatar icon="ios-person" :src="img" :size="44"/>
-    <span v-if="!collapsed && $slots.default" class="logo__text">
+  <h1 class="logo text-center">
+    <Avatar icon="ios-person" :src="img" :size="44" class="logo__img"/>
+    <span v-if="!collapsed" class="logo__text line-1">
       <slot />
     </span>
   </h1>
@@ -17,6 +17,10 @@ export default {
     img: {
       type: String,
       default: ''
+    },
+    body: {
+      type: String,
+      default: null
     }
   }
 }
@@ -27,14 +31,14 @@ export default {
   .logo {
     height: $headerHeight+px;
     line-height: $headerHeight+px;
+    padding: 0 4px;
     &__img {
-      width: 48px;
-      height: 48px;
       border-radius: 50%;
       display: inline-block;
       vertical-align: middle;
     }
     &__text {
+      max-width: 68%;
       font-size: 20px;
       color: #ffffff;
       display: inline-block;

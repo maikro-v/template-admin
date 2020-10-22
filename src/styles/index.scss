@@ -1,6 +1,4 @@
-@import "theme";
 @import "var";
-@import "flex";
 @import "transition";
 
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -10,11 +8,18 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legen
 }
 
 body {
-  font-size: 16px;
+  font-size: 12px;
+  color: #333333;
 }
 
 a {
+  text-decoration: none;
+  cursor: pointer;
   &:active {
     opacity: .9;
   }
+}
+
+ul,ol,li {
+  list-style-type: none;
 }

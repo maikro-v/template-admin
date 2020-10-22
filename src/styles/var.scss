@@ -1,3 +1,7 @@
+/*
+ * 一些常用class类
+ */
+
 /* 文字溢出处理 */
 @mixin line {
   overflow : hidden;
@@ -5,27 +9,24 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
-@for $i from 1 through 5 {
+@for $i from 2 through 5 {
   .line-#{$i} {
     @include line;
     -webkit-line-clamp: $i;
   }
 }
-
-/* 字体对其 */
-.text-left {
-  text-align: left;
-}
-.text-center {
-  text-align: center;
-}
-.text-right {
-  text-align: right;
+.line-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* 边距 5 - 50 步伐为5 */
 @for $i from 1 through 10 {
   $val: $i * 5;
+  .m-#{$val} {
+    margin: #{$val}px;
+  }
   .mt-#{$val} {
     margin-top: #{$val}px;
   }
@@ -37,6 +38,9 @@
   }
   .mb-#{$val} {
     margin-bottom: #{$val}px;
+  }
+  .p-#{$val} {
+    padding: #{$val}px;
   }
   .pt-#{$val} {
     padding-top: #{$val}px;
@@ -62,4 +66,76 @@
 }
 .mb-auto {
   margin-bottom: auto;
+}
+
+/* flex */
+.inline-flex {
+  display: inline-flex;
+}
+.flex {
+  display: flex;
+}
+.flex,
+.inline-flex {
+  &-item {
+    flex: 1;
+  }
+  &-direction-column {
+    flex-direction: column;
+  }
+  &-direction-row {
+    flex-direction: row;
+  }
+  &-wrap {
+    flex-wrap: wrap;
+  }
+  &.align-start{
+    align-items: flex-start;
+  }
+  &.align-center{
+    align-items: center;
+  }
+  &.align-end{
+    align-items: flex-end;
+  }
+  &.justify-start{
+    justify-content: flex-start;
+  }
+  &.justify-center{
+    justify-content: center;
+  }
+  &.justify-end{
+    justify-content: flex-end;
+  }
+  &.justify-between{
+    justify-content: space-between;
+  }
+  &.justify-around{
+    justify-content: space-around;
+  }
+}
+
+/* 字体对其 */
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+/* 浮动 */
+.lf {
+  float: left;
+}
+.rf {
+  float: right;
+}
+.clear::after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
 }

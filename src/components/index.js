@@ -1,7 +1,7 @@
 import Upload from './upload'
 import CustomPage from './custom-page'
 import Empty from './empty'
-import Cropper from './image-cropper'
+import Cropper from './cropper'
 import Loading from './loading'
 import Image from './image'
 

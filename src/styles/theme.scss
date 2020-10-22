@@ -1,2 +1,21 @@
 $primary: #ff780a;
 $warning: #ed4014; // 警告
+
+/*
+ * 主题色列表，生成对应color和background
+ * .color-primary { color: #FF6633 }
+ * .background-primary { background-color: #FF6633 }
+ */
+$colorList: (
+  primary: $primary,
+  warning: $warning
+);
+
+@each $name in map-keys($colorList) {
+  .color-#{$name} {
+    color: map-get($colorList, $name);
+  }
+  .background-#{$name} {
+    background-color: map-get($colorList, $name);
+  }
+}

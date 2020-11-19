@@ -1,7 +1,7 @@
-const isDev = process.env.NODE_ENV === 'development'
+import build from '@/../build'
 
 export default {
-  isDev,
+  isDev: build.isDev,
 
   /*
   * 路由根路径

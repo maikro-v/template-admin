@@ -38,7 +38,7 @@
       </div>
     </Upload>
     <!-- 裁剪框 -->
-    <image-cropper
+    <cropper
       v-model="showCropper"
       :img="previewImg"
       :crop-width="cropWidth"

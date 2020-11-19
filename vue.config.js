@@ -1,7 +1,7 @@
-const config = require('./config/index.js')
+const build = require('./build/index.js')
 
 module.exports = {
-  publicPath: config.publicPath,
+  publicPath: build.publicPath,
   productionSourceMap: false,
   css: {
     loaderOptions: {
@@ -18,6 +18,6 @@ module.exports = {
   },
   devServer: {
     disableHostCheck: true,
-    proxy: config.proxy
+    proxy: build.proxy
   }
 }

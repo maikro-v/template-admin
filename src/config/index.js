@@ -6,7 +6,7 @@ export default {
   /*
   * 路由根路径
   * */
-  routerRoot: isDev ? process.env.BASE_URL : '/',
+  routerRoot: build.isDev ? process.env.BASE_URL : '/',
 
   /*
   * 首页

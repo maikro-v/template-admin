@@ -5,5 +5,14 @@ export default [
     meta: {
       hideInMenu: true
     }
+  },
+  {
+    path: '/login',
+    name: '_login',
+    component: () => import('@/views/login'),
+    meta: {
+      hideInMenu: true,
+      title: '登录'
+    }
   }
 ]
